@@ -698,17 +698,6 @@
                                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="q5f-Rw-934">
-                                                <rect key="frame" x="64" y="37" width="51" height="22"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="51" id="WS1-ih-3QX"/>
-                                                </constraints>
-                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="TQi-vK-35H">
-                                                    <font key="font" metaFont="system"/>
-                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                </textFieldCell>
-                                            </textField>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="alT-tM-pLw">
                                                 <rect key="frame" x="141" y="40" width="45" height="17"/>
                                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Height" id="9IH-zy-q6Q">
@@ -717,12 +706,31 @@
                                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
-                                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5f6-Aa-PKH">
-                                                <rect key="frame" x="192" y="37" width="51" height="22"/>
+                                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ood-Uc-Fa3">
+                                                <rect key="frame" x="64" y="37" width="59" height="22"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="51" id="KBb-qQ-trt"/>
+                                                    <constraint firstAttribute="width" constant="59" id="HQm-fy-W1Y"/>
                                                 </constraints>
-                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="7JP-BH-8Ht">
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="cd8-ef-FNh">
+                                                    <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" id="LTh-UR-GP7">
+                                                        <real key="minimum" value="0.0"/>
+                                                        <real key="maximum" value="100"/>
+                                                    </numberFormatter>
+                                                    <font key="font" metaFont="system"/>
+                                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9DP-G9-61p">
+                                                <rect key="frame" x="197" y="37" width="59" height="22"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="59" id="mMo-ss-YQf"/>
+                                                </constraints>
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="hA1-wg-eFO">
+                                                    <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="CB8-WH-gap">
+                                                        <real key="minimum" value="0.0"/>
+                                                        <real key="maximum" value="100"/>
+                                                    </numberFormatter>
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -730,15 +738,15 @@
                                             </textField>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="q5f-Rw-934" firstAttribute="centerY" secondItem="xBF-ou-P3a" secondAttribute="centerY" id="6MX-1m-Fe3"/>
-                                            <constraint firstItem="alT-tM-pLw" firstAttribute="centerY" secondItem="q5f-Rw-934" secondAttribute="centerY" id="NaZ-IK-Zg4"/>
+                                            <constraint firstItem="Ood-Uc-Fa3" firstAttribute="leading" secondItem="xBF-ou-P3a" secondAttribute="trailing" constant="8" id="3D7-9A-8Tz"/>
+                                            <constraint firstItem="9DP-G9-61p" firstAttribute="leading" secondItem="alT-tM-pLw" secondAttribute="trailing" constant="13" id="4WV-VP-2cb"/>
+                                            <constraint firstItem="alT-tM-pLw" firstAttribute="leading" secondItem="Ood-Uc-Fa3" secondAttribute="trailing" constant="20" id="Cea-A9-Vml"/>
+                                            <constraint firstItem="alT-tM-pLw" firstAttribute="top" secondItem="VBh-rQ-uUO" secondAttribute="top" constant="39" id="Pod-CZ-7p7"/>
                                             <constraint firstItem="xBF-ou-P3a" firstAttribute="leading" secondItem="VBh-rQ-uUO" secondAttribute="leading" constant="20" id="UCf-tI-POI"/>
                                             <constraint firstItem="xBF-ou-P3a" firstAttribute="centerY" secondItem="VBh-rQ-uUO" secondAttribute="centerY" id="Uff-D3-vIN"/>
-                                            <constraint firstItem="5f6-Aa-PKH" firstAttribute="centerY" secondItem="alT-tM-pLw" secondAttribute="centerY" id="WCd-n2-rZR"/>
-                                            <constraint firstItem="alT-tM-pLw" firstAttribute="leading" secondItem="q5f-Rw-934" secondAttribute="trailing" constant="28" id="hl9-SZ-qJh"/>
+                                            <constraint firstItem="9DP-G9-61p" firstAttribute="top" secondItem="VBh-rQ-uUO" secondAttribute="top" constant="37" id="a68-Th-ubu"/>
+                                            <constraint firstItem="Ood-Uc-Fa3" firstAttribute="top" secondItem="VBh-rQ-uUO" secondAttribute="top" constant="37" id="byj-Ie-xvI"/>
                                             <constraint firstAttribute="width" constant="289" id="j4Z-an-Whp"/>
-                                            <constraint firstItem="5f6-Aa-PKH" firstAttribute="leading" secondItem="alT-tM-pLw" secondAttribute="trailing" constant="8" id="jkf-5x-IUR"/>
-                                            <constraint firstItem="q5f-Rw-934" firstAttribute="leading" secondItem="xBF-ou-P3a" secondAttribute="trailing" constant="8" id="lUc-2X-jCc"/>
                                             <constraint firstAttribute="height" constant="96" id="yLd-Ie-v0J"/>
                                         </constraints>
                                     </customView>
@@ -770,6 +778,10 @@
                             <constraint firstItem="dRs-E0-vNd" firstAttribute="centerX" secondItem="L17-FP-Xmm" secondAttribute="centerX" id="sez-Z5-Vwo"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="heightInput" destination="9DP-G9-61p" id="iAk-0c-z8m"/>
+                        <outlet property="widthInput" destination="Ood-Uc-Fa3" id="8iE-VY-tix"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
