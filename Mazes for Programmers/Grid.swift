@@ -15,56 +15,53 @@ class Grid {
     var grid = [[Cell]]()
     
     var size: Int {
-        get { return self.rows * self.columns }
+        return self.rows * self.columns
     }
     
     var eachRow: AnyGenerator<[Cell]> {
-        get {
+        var lastIteration = 0
         
-            var lastIteration = 0
+        return anyGenerator({
+            guard lastIteration < self.rows else {
+                return nil
+            }
             
-            return anyGenerator({
-                guard lastIteration < self.rows else {
-                    return nil
-                }
-                
-                let next = self.grid[lastIteration] as [Cell]
-                lastIteration++
-                return next
-                
-            })
-        }
+            let next = self.grid[lastIteration] as [Cell]
+            lastIteration++
+            return next
+            
+        })
     }
     
     var eachCell: AnyGenerator<Cell> {
-        get {
+
             
-            var rowIndex = 0;
-            var columnIndex = 0;
+        var rowIndex = 0;
+        var columnIndex = 0;
+        
+        return anyGenerator({
             
-            return anyGenerator({
-                
-                guard rowIndex < self.rows else {
-                    return nil
-                }
-                
-                guard columnIndex < self.columns else {
-                    return nil
-                }
-                                
-                let nextCell = self.grid[rowIndex][columnIndex]
-                
-                columnIndex++
-                
-                if( columnIndex == self.columns ){
-                    columnIndex = 0
-                    rowIndex++
-                }
-                
-                return nextCell
-                
-            })
-        }
+            guard rowIndex < self.rows else {
+                return nil
+            }
+            
+            guard columnIndex < self.columns else {
+                return nil
+            }
+                            
+            let nextCell = self.grid[rowIndex][columnIndex]
+            
+            columnIndex++
+            
+            if( columnIndex == self.columns ){
+                columnIndex = 0
+                rowIndex++
+            }
+            
+            return nextCell
+            
+        })
+
     }
     
     init (rows: Int, columns:Int) {
@@ -96,18 +93,18 @@ class Grid {
     }
     
     func configureCells() {
-        for row in self.grid {
+        for row in grid {
             for cell in row {
                 
                 let northInBounds = cell.row - 1 		> -1;
-                let southInBounds = cell.row + 1 		< self.rows;
-                let eastInBounds = cell.column + 1      < self.columns;
+                let southInBounds = cell.row + 1 		< rows;
+                let eastInBounds = cell.column + 1      < columns;
                 let westInBounds = cell.column - 1      > -1;
                 
-                cell.north = northInBounds ? self.grid[ cell.row - 1 ][ cell.column ] : nil
-                cell.south = southInBounds ? self.grid[ cell.row + 1 ][ cell.column ] : nil
-                cell.east = eastInBounds ? self.grid[ cell.row ][ cell.column + 1] : nil
-                cell.west = westInBounds ? self.grid[ cell.row ][ cell.column - 1] : nil
+                cell.north = northInBounds ? grid[ cell.row - 1 ][ cell.column ] : nil
+                cell.south = southInBounds ? grid[ cell.row + 1 ][ cell.column ] : nil
+                cell.east = eastInBounds ? grid[ cell.row ][ cell.column + 1] : nil
+                cell.west = westInBounds ? grid[ cell.row ][ cell.column - 1] : nil
 
             }
         }
@@ -115,7 +112,7 @@ class Grid {
     
     func cellAtGridPosition( row: Int, column: Int) -> Cell? {
 
-        if let cell = self.grid[safe: row]?[safe: column] as Cell? {
+        if let cell = grid[safe: row]?[safe: column] as Cell? {
             return cell
         }else{
             return nil
@@ -124,7 +121,7 @@ class Grid {
     }
     
     func randomCell() -> Cell {
-        return self.grid.randomItem().randomItem()
+        return grid.randomItem().randomItem()
     }
     
 }
